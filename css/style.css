@@ -1,0 +1,297 @@
+:root {
+	--lilas: #beacff;
+	--paragrafo: #777777;
+    --branco: #f0f0f0;
+    --roxo: #6750bd;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1em;
+   /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+   font-family: 'Nunito', sans-serif;
+    background-color: var(--branco);
+}
+
+a{
+    text-decoration: none;
+    color: var(--branco);
+}
+
+p{
+    text-align: center;
+    color: var(--paragrafo);
+}
+
+h1{
+    color: var(--paragrafo);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+span{
+    color: var(--branco);
+    font-size: 1.4em;
+}
+
+h2{
+    color: gray;
+    margin-bottom: 10px;
+}
+
+
+
+/* header *************************************/
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    background: var(--lilas);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li{
+    margin: 0 15px;
+}
+
+.menu ul li a{
+    display: block;
+}
+
+.menu ul li a:hover{
+    transform: scale(1.2);
+}
+
+.botao-menu{
+    display: none;
+}
+
+/* conteudo principal ************************/
+#conteudo{
+    margin-top: 100px;
+}
+
+#welcome-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#welcome-section img{
+    width: 25%;
+    border-radius: 50%;
+    margin: 30px 0;
+}
+
+#projects{
+    height: 700px;
+    background: var(--roxo);
+    padding: 60px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects h2, #projects p{
+    color: var(--branco);
+}
+
+#img-projects{
+    margin-top: 20px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 50px;
+}
+
+.img{
+    width: 100%;
+}
+
+#img-projects img{
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+}
+
+#img-projects img:hover{
+    transform: scale(1.03);
+    transition: .4s ease;
+}
+
+.see-more{
+    display: block;
+    margin-top: 40px;
+}
+
+.see-more:hover{
+    transform: scale(1.2);
+}
+
+#services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 60px;
+    height: 400px;
+}
+
+.example{
+    margin-top: 20px;
+}
+
+.example img{
+    width: 100px;
+}
+
+#contact{
+    height: 450px;
+    background: var(--roxo);
+    padding: 60px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--branco);
+}
+
+#contact p, #contact h2{
+    color: var(--branco);
+}
+
+#contact a{
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+#contact a:hover{
+    transform: scale(1.2);
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#form input[type=submit]{
+    border: none;
+    margin-top: 20px;
+    height: 30px;
+    color: var(--paragrafo);
+    font-size: 1.09em;
+}
+
+#form input[type=submit]:hover{
+    background: var(--lilas);
+}
+
+footer{
+    padding: 25px;
+}
+
+/*responsive **********************************/
+@media (max-width: 700px){
+
+    .menu{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: -5;
+        width: 100%;
+        background: var(--lilas);
+        transition: .5s ease;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .menu ul li{
+        margin: 15px 0;
+        width: 30%;
+        height: 30px;
+        text-align: center;
+    }
+
+    .menu ul li a{
+        width: 100%;
+    }
+
+    .menu ul li a:hover{
+        transform: none;
+    }
+
+    .hide{
+        top: -300px;
+        font-size: 0;
+        transition: .5s ease;
+    }
+
+    .botao-menu{
+        display: block;
+        margin-right: 10px;
+    }
+
+    #welcome-section{
+        padding-bottom: 10px;
+    }
+
+    #welcome-section, #projects, #services, #contact{
+        height: auto;
+    }
+
+    #img-projects{
+        margin-top: 20px;
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+
+    .example{
+        text-align: center;
+    }
+
+    .example img{
+        width: 25%;
+    }
+}
+
+@media (max-width: 475px){
+    #img-projects{
+        width: 90%;   
+    }
+
+    #contact a{
+        display: block;
+        text-align: center;
+    }
+
+    form{
+        width: 100%;
+    }
+}
